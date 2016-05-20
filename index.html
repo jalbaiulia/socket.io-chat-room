@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>My Chat</title>
+
+    <meta charset="utf-8"/>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+
+
+
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/modal.css">
+
+  </head>
+
+  <body>
+  
+
+  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="modal-title" id="myModalLabel">Pick a username to enter chat</h4>
+                
+                <input type="text" name="username" class="form-group form-control" id="registerInput" autofocus>
+
+                <button type="button" class="btn btn-primary" id="registerButton" class="form-group">Register</button>
+
+                <h5 class="invisibleLabel" id="noInput">Please introduce a username</h5>
+                <h5 class="invisibleLabel" id="usernameExists">Please select another username. This is already taken.</h5>
+                <h5 class="invisibleLabel" id="notAllowed">Please introduce another username. This one is borring.</h5>
+            </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div id="roomChat">
+      
+      <div class="usersActivity">
+        <div id="allMessages">
+          <div id="you"></div>
+          <ul id="messages"></ul>
+        </div>
+
+        <div id="activeUsersBox">
+          <h4 id="activeUsersLabel">Users chatting now</h4>
+          <ul id="activeUsers"></ul>
+          <button disabled="true" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#roomModal" id="privateChat">Create Chat Room</button>
+        </div>
+      </div>
+
+      <div class="sendingMessages">
+        <form action="" class="sendMessage"> 
+          <input id="messageInput" autocomplete="off"/>
+          <button type="button" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </div>
+
+
+
+   <div class="modal fade" id="roomModal" tabindex="-1" role="dialog" aria-labelledby="privateChat">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <div class="modal-title" id="privateChatUsers"></div>
+        </div>
+
+        <div class="modal-body">
+          <div class="chat">
+            <div class="usersActivity">
+              <div id="allMessagesRoom">
+                <div id="youRoom"></div>
+                <ul id="messagesRoom"></ul>
+              </div>
+              <div id="activeUsersBoxRoom">
+                <div id="activeUsersLabelRoom" class="invisibleTyping"><span> typing now </span></div>
+                <ul id="activeUsersRoom"></ul>
+              </div>
+            </div>
+            <div class="sendingMessages">
+              <!-- <form>  -->
+                <input id="messageInputRoom" autocomplete="off" class="form-control" />
+                <button type="button" id="sendMessageRoom" class="btn btn-primary">Send</button>
+              <!-- </form> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- <div class="userTyping"></div> -->
+
+
+
+
+    <script type="text/javascript" src="scripts/sockets-client.js"></script>
+    <script type="text/javascript" src="scripts/modal.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
+
+  </body>
+
+</html>

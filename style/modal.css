@@ -1,0 +1,46 @@
+#registerButton {
+	display: block;
+}
+
+.invisibleLabel {
+	display: none;
+	color: red;
+}
+
+input#messageInputRoom {
+    display: inline-block;
+    width: 80%;
+}
+
+button#sendMessageRoom {
+    display: inline-block;
+    width: 10%;
+}
+
+ul#messagesRoom {
+    height: 60vh;
+    overflow: overlay;
+}
+
+ul#messages {
+    overflow: overlay;
+    height: 90vh;
+}
+
+.userTyping {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    
+}
+
+.invisibleTyping {
+    display: none;
+    color: #000099;
+}
+
+.privateList {
+    display: block;
+    float: left;
+    margin:5px;
+}
